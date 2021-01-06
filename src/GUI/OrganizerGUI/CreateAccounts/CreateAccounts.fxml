@@ -3,7 +3,6 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
 <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="947.0" styleClass="root" stylesheets="@../CreateStuff.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="GUI.OrganizerGUI.CreateAccounts.CreateAccountsController">
     <columnConstraints>
@@ -47,7 +46,7 @@
             </children></HBox>
 
             <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="8">
-                <Button mnemonicParsing="false" onAction="#handleSignUpButtonAction" prefHeight="26.0" prefWidth="98.0" snapToPixel="false" styleClass="button2" stylesheets="@../CreateStuff.css" text="Create Account" textAlignment="RIGHT" />
+                <Button mnemonicParsing="false" onAction="#handleSignUpButtonAction" prefHeight="26.0" prefWidth="120.0" snapToPixel="false" styleClass="button2" stylesheets="@../CreateStuff.css" text="Create Account" textAlignment="RIGHT" />
             </HBox>
          <PasswordField  fx:id="passwordFieldRe" layoutX="255.0" layoutY="201.0" styleClass="text-field3" stylesheets="@../CreateStuff.css" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <columnConstraints>
