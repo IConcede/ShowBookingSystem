@@ -1,0 +1,58 @@
+.root {
+    -fx-background-image: url("../Images/signup.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#signUp {
+    -fx-font-size: 28px;
+    -fx-font-weight: normal;
+    -fx-font-family: "Arial Black";
+    -fx-fill: #6d3684;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.button {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-background-color: #6d3684;
+    -fx-background-radius: 10px;
+}
+
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6d3684;
+}
+
+.radio-button{
+    -fx-text-fill: #6d3684;
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+}
+
+.text-field {
+    -fx-border-color: #6d3684;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-background-radius: 0 ;
+    -fx-text-fill: black;
+}
+.text-field:focused {
+    -fx-background-color: transparent ;
+    -fx-border-color: #6d3684;
+    -fx-border-width: 0 0 2 0;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#6d3684, #522863);
+}
+
+
+/* CSS HEX */
+/*--dark-orchid: #af2bbfff;*/
+/*--purple-plum: #a14ebfff;*/
+/*--blue-gray: #6c91bfff;*/
+/*--verdigris: #5fb0b7ff;*/
+/*--ocean-green: #5bc8afff; */

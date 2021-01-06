@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="680.0" prefWidth="900.0" styleClass="root" stylesheets="@DeleteChat.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="GUI.AdminGUI.DeleteChatController">
+   <center>
+      <VBox prefHeight="280.0" prefWidth="597.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                <Label prefHeight="70.0" prefWidth="570.0" styleClass="label2" stylesheets="@DeleteChat.css" text="Enter two usernames to delete their associated chat. This cannot be undone." textAlignment="CENTER" />
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="301.0">
+                <Label stylesheets="@DeleteChat.css" text="Username 1" />
+                <TextField fx:id="username1Field" alignment="BOTTOM_CENTER" onAction="#handleDeleteChatButtonAction" prefWidth="197.0" styleClass="text-field1" stylesheets="@DeleteChat.css" />
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
+                <Label stylesheets="@DeleteChat.css" text="Username 2" />
+                <TextField fx:id="username2Field" alignment="BOTTOM_CENTER" onAction="#handleDeleteChatButtonAction" prefWidth="197.0" styleClass="text-field1" stylesheets="@DeleteChat.css" />
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
+                <Button id="DeleteChatButton" onAction="#handleDeleteChatButtonAction" stylesheets="@DeleteChat.css" text="Delete Chat" />
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <left>
+      <Region prefHeight="200.0" prefWidth="180.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Region prefHeight="200.0" prefWidth="180.0" BorderPane.alignment="CENTER" />
+   </right>
+   <top>
+      <Region prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </top>
+   <bottom>
+      <Region prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

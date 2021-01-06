@@ -1,0 +1,45 @@
+Here is a list of the design patterns used in this project:
+
+Observer:
+
+    For our GUI we use the observer design pattern create a cause and effect relationship between sub-scenes and
+    super-scenes. In our program, there are three types of scenes that use inheritance:
+        - UserDashboardController (UDC) has children AdminDashboardController, AttendeeDashboardController, etc.
+        - DisplayEventsController (DEC) has children DisplayDeletableEvents, DisplayAvailableEvents, etc.
+        - EventInfoController (EIC) has children EventInfoDeleteController, EventInfoSignUpController, etc.
+
+    These three classes are what we consider "SceneParents", which is why they are in the folder with that name.
+    EventInfoController extends Observable, DisplayEventsController extends Observable and implements Observer, and
+    UserDashboardController implements Observer.
+    There is at least 1 child for each of the SceneParents for each of the UserGUIs, so it would be difficult to
+    explain every single observer relationship, so I will explain two specific cases:
+
+        In the AdminGUI, the AdminDashboard is loaded. Upon initialization, it loads a sub-scene that is associated
+        with DisplayDeletableEvents. While the scene loads, the dashboard begins observing DisplayDeletableEvents.
+        Within the sub-scene, if the user clicks on an event, the program loads another sub-scene but this one is
+        associated with EventInfoDeleteController. At the same time, the DisplayDeletableEvents controller begins
+        observing the EventInfoDeleteController. Then if the user chooses to delete an event in this final sub-scene,
+        it notifies the DisplayDeletableEvents controller, which updates by notifying the AdminDashboard to re-load
+        the DisplayDeletableEventsController. So it is a chain of two observer relationships.
+            - Cause: Admin deletes an event.
+            - Effect: the events list being shown gets updated to remove that event.
+
+        The same thing occurs when an Organizer chooses to modify an event, but there are some subtle differences.
+        In this case we have OrganizerDashboard observing DisplayModifiableEvents observing EventInfoModify.
+        Within the final sub-scene, the user can choose between "remove event", "modify speaker", or "edit event".
+        Depending on the choice, the EventInfoModifyController while notify its observers and pass a string argument
+        that will determine which scene the dashboard will load next. So it's the same premise but more versatile.
+
+Singleton:
+
+    It is difficult to pass data between controllers in the fxml framework, so we created singleton classes for the
+    various use cases and the logged-in username to provide a global point of access to it.
+        -/GUI/DataHolders/ManagerStorage stores the instances of the use cases
+        -/GUI/DataHolders/UserHolder     stores the logged-in username
+
+    Implementing singleton classes allowed ease of access to data, and ensured these classes are only instantiated
+    once, as we know for certain that though utilized and coordinated across the system, only a single instance of
+    these data is needed at any given time.
+
+    Although this particular design pattern was not covered in the course material, we felt that this was an apt
+    solution to circumventing some fxml restrictions and improves the code readability, during our research.
